@@ -30,6 +30,15 @@ Closing one, with the closing comment from AGENTS.md:
 gh issue close <n> -c "<closing comment>"
 ```
 
+## What every issue carries
+
+Agreed with the human on the morning-digest plan (2026-11-01). Step 4 reads this instead of asking again.
+
+- First line: `Source: plan.md § <n>` (the reviewer sorts by it).
+- Label: `plan:<plan name>` from the plan's frontmatter, e.g. `plan:morning-digest`.
+- Sections: **Scope**, **Done when**, **Blocked by** (real issue numbers, or `—`), **Model** (strongest for logic, cheaper for views and tests).
+- A step that waits on someone else (a review) stays open until they confirm.
+
 ## No `gh`
 
 Steps 1–4 hold either way. GitHub reachable another way (a connector, the REST API, the web UI):
