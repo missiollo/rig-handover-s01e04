@@ -14,9 +14,12 @@ export type DigestRow = {
   lastAt: string;
 };
 
+// Lines per status that night; parsed lines only (bad ones are in badLines).
+export type StatusCounts = Record<RunStatus, number>;
+
 // rows sorted by job; badLines counts lines that didn't parse (never thrown).
-// An empty file is { rows: [], badLines: 0 }.
-export type Digest = { rows: DigestRow[]; badLines: number };
+// An empty file is { rows: [], badLines: 0, counts: { ok: 0, retry: 0, fail: 0 } }.
+export type Digest = { rows: DigestRow[]; badLines: number; counts: StatusCounts };
 
 // null = no file for that night (the page answers 404).
 export type ReadNight = (runsDir: string, night: string) => Digest | null;
